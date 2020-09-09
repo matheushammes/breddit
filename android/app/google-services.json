@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "265395487125",
+    "firebase_url": "https://breddit-36873.firebaseio.com",
+    "project_id": "breddit-36873",
+    "storage_bucket": "breddit-36873.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:265395487125:android:415063cd8dd371d5aaf69c",
+        "android_client_info": {
+          "package_name": "walden1049.breddit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "265395487125-tq4si6hkm4kvkcefstcghvr379omgs5s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqZKpuMDPniq3d2eHFtr-SemrEUAIPe88"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "265395487125-tq4si6hkm4kvkcefstcghvr379omgs5s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
