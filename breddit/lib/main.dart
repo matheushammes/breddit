@@ -1,6 +1,7 @@
 import 'package:breddit/Services/auth.dart';
 import 'package:breddit/pages/Home.dart';
 import 'package:breddit/pages/Loading.dart';
+import 'package:breddit/pages/PostHub.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:breddit/pages/Wrapper.dart';

@@ -1,5 +1,6 @@
 import 'package:breddit/Models/user.dart';
 import "package:firebase_auth/firebase_auth.dart";
+import 'package:breddit/Models/user.dart';
 
 
 class AuthService {
