@@ -8,6 +8,8 @@ import 'package:meta/meta.dart';
 // the workaround could be saving the reddit username and device ID using those as identifiers.
 class BredditUser{
   final String uid, username, refreshToken, accessToken;
+  final List subreddits;
+
 
   String getUID() {
     return uid;
@@ -25,12 +27,17 @@ class BredditUser{
     return accessToken;
   }
 
+  List getSubreddits() {
+    return subreddits;
+  }
+
 
   BredditUser({
-    @required this.uid,
-    @required this.username,
-    @required this.refreshToken,
+    this.uid,
+    this.username,
+    this.refreshToken,
     this.accessToken,
+    this.subreddits,
   });
 
 

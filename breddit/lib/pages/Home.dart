@@ -1,3 +1,5 @@
+import 'package:breddit/pages/Register.dart';
+import 'package:breddit/pages/SignIn.dart';
 import 'package:flutter/material.dart';
 import "myWidgets/myWidgets.dart";
 import "package:breddit/Services/auth.dart";
@@ -22,14 +24,18 @@ class _HomemadeSourdoughState extends State<HomemadeSourdough> {
                     padding: EdgeInsets.fromLTRB(0,0,0,50),
                     child:
                     Image.asset("assets/images/breadmate.png")),
-                Container(
-                  child:
-                  MyButton(onClicked: () {Navigator.push(context,  MaterialPageRoute(builder: (context) => WebViewGO()
+                Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children:
+                      [
+                  MyButton(onClicked: () {Navigator.push(context,  MaterialPageRoute(builder: (context) => SignIn()
                   ));} ,
-                      child: const Text('Log In', style: TextStyle(fontSize: 20))))]
+                      child: const Text('Log In', style: TextStyle(fontSize: 20))),
+    MyButton(onClicked: () {Navigator.push(context,  MaterialPageRoute(builder: (context) => Register()
+    ));} ,
+    child: const Text('Register', style: TextStyle(fontSize: 20)))])])
             ),
-        ),
-    );
+        );
   }
 }
 
