@@ -49,10 +49,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:draw/draw.dart';
 import 'package:breddit/Models/user.dart';
 import 'package:random_string/random_string.dart';
+import 'package:provider/provider.dart';
 
-Future<void> oAuth(auth_code) async {
+Future<void> oAuth(auth_code, uid) async {
   StreamController<Subreddit> controller = StreamController();
-
   final reddit = Reddit.createInstalledFlowInstance(
       userAgent: randomAlphaNumeric(10),
       redirectUri: Uri.parse('http://breddit.io'),
@@ -71,13 +71,14 @@ Future<void> oAuth(auth_code) async {
   Map<String, dynamic> data = currentUser.data;
   print('subreddit: ' + data['subreddit'].toString());
 
-  saveUserFirebase(accessToken, refreshToken, currentUser.id,
+  saveUserFirebase(uid, accessToken, refreshToken, currentUser.id,
       currentUser.displayName, data['subreddit']);
 }
 
-Future saveUserFirebase(String accessToken, String refreshToken,
+Future saveUserFirebase(String uid, String accessToken, String refreshToken,
     String redditId, String username, Map<String, dynamic> subreddit) async {
   await FirebaseFirestore.instance.collection('users').doc(redditId).set({
+    'uid': uid,
     'accessToken': accessToken,
     'refreshToken': refreshToken,
     'redditId': redditId,
@@ -86,15 +87,16 @@ Future saveUserFirebase(String accessToken, String refreshToken,
   });
 
   print('saveUserFirebase');
-  loadUserFirebase(redditId);
+  loadUserFirebase(uid);
 }
 
-Future loadUserFirebase(String redditId) async {
+Future loadUserFirebase(String uid) async {
   await FirebaseFirestore.instance
       .collection('users')
-      .doc(redditId)
+      .doc(uid)
       .get()
       .then((DocumentSnapshot snap) {
+        print(snap.data()['uid']);
     print(snap.data()['accessToken']);
     print(snap.data()['refreshToken']);
     print(snap.data()['redditId']);

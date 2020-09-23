@@ -7,27 +7,6 @@ import 'dart:async';
 import 'functions.dart';
 import "package:breddit/Services/auth.dart";
 
-// TODO:
-// post manager: redditor.remaining;
-//               redditor.subreddits;
-//               List of posts;
-//               schedule;
-//               selected;
-//               List of maps: titles, subreddits, ids, Post objects;
-
-class PostManager{
-  final int postsUsed;
-  final List postObjects, schedule;
-
-  PostManager({
-    this.postsUsed,
-    this.postObjects,
-    this.schedule,
-  });
-}
-
-
-
 class MyScaffold extends StatelessWidget {
   final Widget add;
 
